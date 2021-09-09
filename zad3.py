@@ -29,28 +29,24 @@ nr = 34
 plec_facet = True
 """
 
+if __name__ == '__main__':
+    rok = 2002
+    miesiac = 11
+    dzien = 3
+    nr = 34
+    plec_facet = True
+    
+    rok_s = str(rok)[2:]
+    miesiac_s = str(miesiac + 20 if rok >= 2000 else miesiac).zfill(2)
+    dzien_s = str(dzien).zfill(2)
+    nr_s = str(nr).zfill(3)
+    plec_s = str(int(plec_facet))
+    pesel = f'{rok_s}{miesiac_s}{dzien_s}{nr_s}{plec_s}'
 
-rok = 1999
-miesiac = 3
-dzien = 3
-nr = 34
-plec_m = True
+    suma = 0
+    for cyfra in pesel:
+        i = int(cyfra)
+        suma = suma + i
 
-rok_2 = str(rok)[-2:]
-
-if rok >=2000:
-    miesiac+=20
-elif rok < 2000 and miesiac<10:
-    miesiac=str(miesiac).zfill(2)
-if dzien <10:
-    dzien=str(dzien).zfill(2)
-if len(str(nr))!=3:
-    nr=str(nr).zfill(3)
-
-to_checksum = f'{rok_2}{miesiac}{dzien}{nr}{int(plec_m)}'
-
-suma=0
-for cyfra in to_checksum:
-    suma = suma + int(cyfra)
-
-print(to_checksum+str(suma)[-1])
+    pesel = f'{pesel}{suma % 10}'
+    print(pesel)
