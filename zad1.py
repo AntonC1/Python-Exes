@@ -2,12 +2,7 @@
 Napisać program, który:
 1. Wczyta napis z konsoli:
 2. Sprawdzi, czy czy:
-    2.1 Chociaż jedna z liter napisu jest jedną z liter napisu 'abcdef'
-Podpowiedzi:
- - pętla for dla napisów iteruje po literach
- - break
-Rozszerzenia ćwiczenia:
- - sprawdzić czy wszystkie litery spełniają warunek
+2.1 Chociaż jedna z liter napisu jest jedną z liter napisu 'abcdef'
  """
 
 nazwa_tagu = input('nazwa tagu: ')
